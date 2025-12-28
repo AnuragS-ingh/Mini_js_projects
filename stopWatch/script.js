@@ -14,15 +14,17 @@ startButton.addEventListener('pointerdown',start);
 stopButton.addEventListener('pointerdown',pauseTimer);
 resetButton.addEventListener('pointerdown',resetTimer)
 
-function  vibrate (ms =30){
+function vibrate (ms=30){
   if(navigator.vibrate){
-    vibrate(ms)
+    navigator.vibrate(ms)
   }
 }
 
 function start() {
-  if (intervalId) return;
   vibrate()
+  console.log("hello")
+  if (intervalId) return;
+  
   startTime = Date.now()-elipsedTime;
   intervalId = setInterval(() => {
     elipsedTime = Date.now()-startTime;

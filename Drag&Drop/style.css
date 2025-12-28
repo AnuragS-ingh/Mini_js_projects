@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(37, 36, 36);
+    overflow: hidden;
+}
+
+.headingContainer
+{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.headingContainer .background
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.background video
+{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+}
+
+.headingContainer .contentContainer
+{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 2;
+    padding: 20px;
+}
+
+.contentContainer h1
+{
+    font-size: 3.5rem;
+    font-family: 'Dancing Script', cursive;
+    font-weight: 700;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(45deg, #ff6b6b, #ffd93d, #6bcf7f, #4d96ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 300% 300%;
+    animation: gradientShift 4s ease infinite;
+    margin-bottom: 2rem;
+}
+
+
+body .mainContainer
+{
+    height: 100%;
+    width: 100%;
+    background-color: pink;
+    position: relative;
+}
+
+.mainContainer .mainVideo
+{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.mainVideo video
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.contentContainer .buttonContainer
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.buttonContainer .button
+{
+    font-size: 1.5rem;
+    padding: 15px 30px;
+    outline: none;
+    border: none;
+    background: transparent;
+    color: white;
+    font-family: 'Dancing Script', cursive;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    min-width: 180px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+#intrested {
+    background: linear-gradient(45deg, #ff6b9d, #c44569);
+    box-shadow: 0 4px 15px rgba(255, 107, 157, 0.4);
+}
+
+#notIntrested {
+    background: linear-gradient(45deg, #4ecdc4, #44a08d);
+    box-shadow: 0 4px 15px rgba(78, 205, 196, 0.4);
+}
+
+.buttonContainer .button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+}
+
+.mainContainer
+{
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: rgb(37, 36, 36);
+}
+
+.paper
+{
+    border: 2px solid black;
+    position: absolute;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    touch-action: none;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+
+    background: linear-gradient(135deg, #fff5f5 0%, #ffecec 100%) !important;
+    backdrop-filter: blur(10px);
+}
+
+.mainContainer .paper .imageMask
+{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(9, 9, 9, 0.475);
+    position: absolute;
+    z-index: 2;
+}
+
+.mainContainer .paper .image 
+{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+}
+
+.paper .image img
+{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.paper .message{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+}
+
+.paper .message p {
+    color: white;
+    font-family: 'Dancing Script';
+    font-weight: 600;
+    padding: 0 20px;
+}
+/* Rose animation styles */
+.rose {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+}
+
+/* media query for papers */
+.paper {
+    transition: all 0.3s ease;
+}
+
+/* Default size */
+.paper {
+    width: 300px;
+    height: 400px;
+}
+
+
+
+/* Large screens */
+@media (min-width: 2000px) {
+    .paper {
+        width: 350px;
+        height: 450px;
+    }
+}
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .paper {
+        width: 250px;
+        height: 350px;
+    }
+    
+    .contentContainer h1 {
+        font-size: 2.8rem;
+    }
+    
+    .buttonContainer .button {
+        font-size: 1.3rem;
+        padding: 12px 25px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .paper {
+        width: 200px;
+        height: 280px;
+    }
+    
+    .contentContainer h1 {
+        font-size: 2.2rem;
+    }
+    
+    .buttonContainer {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .buttonContainer .button {
+        font-size: 1.2rem;
+        width: 200px;
+    }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+    .paper {
+        width: 150px;
+        height: 200px;
+    }
+    
+    .contentContainer h1 {
+        font-size: 1.8rem;
+        padding: 10px;
+    }
+    
+    .buttonContainer .button {
+        font-size: 1.1rem;
+        padding: 10px 20px;
+        min-width: 160px;
+    }
+}
+
+/* Landscape mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    .paper {
+        width: 120px;
+        height: 160px;
+    }
+    
+    .contentContainer h1 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .buttonContainer .button {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+}

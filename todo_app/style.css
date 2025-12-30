@@ -1,0 +1,215 @@
+/* Base styles (keep as is) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(54, 53, 53);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.mainContainer {
+    width: 100vw;
+    max-width: 700px;
+    overflow: hidden;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-task-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-task-container input {
+    width: 70%;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.add-task-container button {
+    border: none;
+    background-color: rgb(77, 75, 75);
+    color: orange;
+    font-size: 20px;
+    padding: 5px 20px;
+    border-radius: 10px;
+}
+
+.taskList-container {
+    width: 100%;
+    background-color: transparent;
+    margin-top: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    height: 20vh;
+    max-height: 400px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+.taskList-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.taskList-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.taskList-container::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+}
+
+.taskList-container::-webkit-scrollbar-button {
+    height: 0;
+    width: 0;
+    display: none;
+}
+
+.taskList-container {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(147, 115, 115, 0.6) transparent;
+}
+
+.taskList-container .task-list {
+    width: 100%;
+    padding: 15px 10px;
+    max-width: 80%;
+    border-radius: 20px;
+    background-color: rgba(231, 163, 140, 0.422);
+    font-size: 25px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* allow content to wrap on small screens */
+}
+
+.task
+{
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.task::-webkit-scrollbar {
+    width: 6px;
+}
+
+.task::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.task::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+}
+
+.task::-webkit-scrollbar-button {
+    height: 0;
+    width: 0;
+    display: none;
+}
+
+.task {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(147, 115, 115, 0.6) transparent;
+}
+
+.task-list .button {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap; /* wrap buttons if needed */
+}
+
+.task-list .button button {
+    border: none;
+    padding: 5px 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: rgb(244, 125, 125);
+}
+
+.task-list .button .delete {
+    background-color: rgb(244, 163, 163);
+    border: 2px solid rgb(11, 10, 10);
+}
+
+.task-list .button .completed {
+    background-color: rgb(168, 242, 168);
+    border: 2px solid green;
+}
+
+/* ================= Mobile Responsiveness ================= */
+
+/* For screens <= 480px (typical mobile) */
+@media screen and (max-width: 480px) {
+    .add-task-container input {
+        width: 90%;
+        padding: 8px 15px;
+        font-size: 16px;
+    }
+
+    .add-task-container button {
+        font-size: 18px;
+        padding: 5px 15px;
+    }
+
+    .taskList-container {
+        height: 30vh;
+        padding: 5px;
+        gap: 15px;
+    }
+
+    .taskList-container .task-list {
+        max-width: 95%;
+        font-size: 18px;
+        padding: 10px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .task-list .button {
+        width: 100%;
+        justify-content: flex-start;
+        gap: 8px;
+        margin-top: 5px;
+    }
+
+    .task-list .button button {
+        font-size: 14px;
+        padding: 4px 8px;
+    }
+}
+
+/* Optional: tablets (481px - 768px) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .add-task-container input {
+        width: 85%;
+        font-size: 17px;
+    }
+
+    .taskList-container .task-list {
+        max-width: 90%;
+        font-size: 20px;
+    }
+}

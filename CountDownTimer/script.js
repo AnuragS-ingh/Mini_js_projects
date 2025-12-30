@@ -48,7 +48,7 @@ function counter(){
             intervalId = null;
             console.log("time up")
         }
-    },1000)
+    },250)
 };
 
 

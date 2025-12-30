@@ -28,6 +28,11 @@
     flex-wrap: wrap;
 }
 
+.hidden
+{
+    display: none;
+}
+
 .countDownContainer input
 {
     height: 2rem;

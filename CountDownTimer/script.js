@@ -21,7 +21,7 @@ pausebutton.addEventListener('click',pauseCountDown)
 resetButton.addEventListener('pointerdown',reset)
 
 button.addEventListener("click",()=>{
-    countDownContainer.style.display = "none";
+    countDownContainer.classList.add("hidden");
     counter()
 });
 
@@ -67,5 +67,5 @@ function reset(){
     minutePart.value = null;
     secondPart.value = null;
     CountDownTime = 0;
-    countDownContainer.style.display = "inline-block";
+    countDownContainer.classList.remove("hidden")
 }
